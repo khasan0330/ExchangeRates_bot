@@ -30,7 +30,7 @@ def trigger_update():
                     except ApiTelegramException:
                         del_block(user[0])
 
-        time.sleep(60 * 1)
+        time.sleep(60 * 10)
 
 
 thread = threading.Thread(target=trigger_update)
