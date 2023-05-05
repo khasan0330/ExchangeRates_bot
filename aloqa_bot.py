@@ -33,7 +33,7 @@ def trigger_update():
                         print(e)
 
             print('Курс не изменился')
-        time.sleep(60 * 1)
+        time.sleep(60 * 10)
 
 
 thread = threading.Thread(target=trigger_update)
