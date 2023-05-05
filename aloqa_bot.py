@@ -29,8 +29,11 @@ def trigger_update():
                                          f"\nAloqabank Продажа: {current[1]} сум")
                     except ApiTelegramException:
                         del_block(user[0])
+                    except Exception as e:
+                        print(e)
 
-        time.sleep(60 * 10)
+            print('Курс не изменился')
+        time.sleep(60 * 1)
 
 
 thread = threading.Thread(target=trigger_update)
