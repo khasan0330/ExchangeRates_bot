@@ -19,9 +19,12 @@ def trigger_update():
     while True:
         if current := aloqabank():
             history = get_last_currency()
+            users = get_all_users()
+            print(history)
+            print(current)
             if tuple(current) != history:
                 insert_currency(*current)
-                for user in get_all_users():
+                for user in users:
                     try:
                         bot.send_message(user[0],
                                          f"🔥 ОБНОВЛЕНИЕ \n\nКурс ЦБ: {current[2]} "
